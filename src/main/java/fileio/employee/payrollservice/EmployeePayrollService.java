@@ -52,6 +52,11 @@ public class EmployeePayrollService {
 			new EmployeePayrollFileIOService().printData();
 	}
 
+	/**
+	 * UC5
+	 * 
+	 * @return
+	 */
 	public long countEntries() {
 		return new EmployeePayrollFileIOService().countEntries();
 	}

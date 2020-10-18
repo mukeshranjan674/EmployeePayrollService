@@ -35,6 +35,11 @@ public class EmployeePayrollFileIOService {
 		}
 	}
 
+	/**
+	 * UC5
+	 * 
+	 * @return
+	 */
 	public long countEntries() {
 		long entries = 0;
 		try {
