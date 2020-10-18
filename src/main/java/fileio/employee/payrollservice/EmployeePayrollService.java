@@ -63,4 +63,16 @@ public class EmployeePayrollService {
 	public long countEntries() {
 		return new EmployeePayrollFileIOService().countEntries();
 	}
+
+	/**
+	 * UC6
+	 * 
+	 * @param readFrom
+	 * @return
+	 */
+	public List<EmployeePayrollData> readData(IOService readFrom) {
+		if (readFrom.equals(IOService.FILE_IO))
+			return new EmployeePayrollFileIOService().readData();
+		return null;
+	}
 }

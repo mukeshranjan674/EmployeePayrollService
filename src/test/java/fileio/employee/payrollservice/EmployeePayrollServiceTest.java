@@ -44,8 +44,21 @@ public class EmployeePayrollServiceTest {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService(Arrays.asList(employeeList));
 		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
 		employeePayrollService.printData(IOService.FILE_IO);
-		employeePayrollService.printData(IOService.FILE_IO);
 		long entries = employeePayrollService.countEntries();
 		assertEquals(3, entries);
+	}
+
+	/**
+	 * UC6
+	 */
+	@Test
+	public void whenReadFromFileShouldReturnListOfEmployees() {
+		EmployeePayrollData[] employeeList = { new EmployeePayrollData(1, "Rama", 50000),
+				new EmployeePayrollData(2, "Shyama", 50000), new EmployeePayrollData(3, "Krishna", 50000) };
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService(Arrays.asList(employeeList));
+		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
+		List<EmployeePayrollData> list = employeePayrollService.readData(IOService.FILE_IO);
+		list.forEach(System.out::println);
+		assertEquals(3, list.size());
 	}
 }
