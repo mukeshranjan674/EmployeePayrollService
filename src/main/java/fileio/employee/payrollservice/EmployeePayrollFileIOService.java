@@ -27,6 +27,9 @@ public class EmployeePayrollFileIOService {
 		}
 	}
 
+	/**
+	 * UC5
+	 */
 	public void printData() {
 		try {
 			Files.lines(new File(FILE_NAME).toPath()).forEach(System.out::println);

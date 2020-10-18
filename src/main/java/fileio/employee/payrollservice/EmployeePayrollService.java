@@ -1,9 +1,7 @@
 package fileio.employee.payrollservice;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class EmployeePayrollService {
@@ -47,6 +45,11 @@ public class EmployeePayrollService {
 		}
 	}
 
+	/**
+	 * UC5
+	 * 
+	 * @param printTo
+	 */
 	public void printData(IOService printTo) {
 		if (printTo.equals(IOService.FILE_IO))
 			new EmployeePayrollFileIOService().printData();

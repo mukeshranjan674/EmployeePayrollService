@@ -32,18 +32,18 @@ public class EmployeePayrollServiceTest {
 				new EmployeePayrollData(2, "Shyama", 50000), new EmployeePayrollData(3, "Krishna", 50000) };
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService(Arrays.asList(employeeList));
 		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
-		employeePayrollService.printData(IOService.FILE_IO);
 	}
 
 	/**
 	 * UC5
 	 */
 	@Test
-	public void whenThreeEmployeeAddedShouldReturnCountOfEmployees() {
+	public void whenThreeEmployeeAddedShouldReturnCountOfEmployeesAndPrintData() {
 		EmployeePayrollData[] employeeList = { new EmployeePayrollData(1, "Rama", 50000),
 				new EmployeePayrollData(2, "Shyama", 50000), new EmployeePayrollData(3, "Krishna", 50000) };
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService(Arrays.asList(employeeList));
 		employeePayrollService.writeEmployeePayrollData(IOService.FILE_IO);
+		employeePayrollService.printData(IOService.FILE_IO);
 		employeePayrollService.printData(IOService.FILE_IO);
 		long entries = employeePayrollService.countEntries();
 		assertEquals(3, entries);
