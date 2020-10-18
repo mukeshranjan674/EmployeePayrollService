@@ -14,6 +14,11 @@ public class NIOFileAPITest {
 	private static String PATH = "C:\\Users\\LENOVO\\Desktop\\NIO";
 	private static String NEW_DIRECTORY_NAME = "TempPlayGround";
 
+	/*
+	 * UC2
+	 * 
+	 * @throws IOException
+	 */
 	@Test
 	public void givenPathWhenCheckedThenConfirm() throws IOException {
 		// Check File Exists
@@ -48,10 +53,15 @@ public class NIOFileAPITest {
 				.forEach(System.out::println);
 
 	}
-	
+
+	/**
+	 * UC3
+	 * 
+	 * @throws IOException
+	 */
 	@Test
-	public void givenADirectoryWhenWatchedListsAllTheActivities() throws IOException{
-		Path dir = Paths.get(PATH+ "/"+NEW_DIRECTORY_NAME);
+	public void givenADirectoryWhenWatchedListsAllTheActivities() throws IOException {
+		Path dir = Paths.get(PATH + "/" + NEW_DIRECTORY_NAME);
 		Files.list(dir).filter(Files::isRegularFile).forEach(System.out::println);
 		new JavaWatchService(dir).processEvents();
 	}

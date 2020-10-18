@@ -15,9 +15,15 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * UC3
+ * 
+ * @author LENOVO
+ *
+ */
 public class JavaWatchService {
 	private static final Kind<?> ENTRY_DELETE = StandardWatchEventKinds.ENTRY_DELETE;
-    private static final Kind<?> ENTRY_MODIFY = StandardWatchEventKinds.ENTRY_MODIFY;
+	private static final Kind<?> ENTRY_MODIFY = StandardWatchEventKinds.ENTRY_MODIFY;
 	private static final Kind<?> ENTRY_CREATE = StandardWatchEventKinds.ENTRY_CREATE;
 	private final WatchService watcher;
 	private final Map<WatchKey, Path> dirWatchers;
@@ -31,7 +37,7 @@ public class JavaWatchService {
 
 	// Register the given directory with the WatchService
 	private void registerDirWatchers(Path dir) throws IOException {
-		WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE,ENTRY_MODIFY);
+		WatchKey key = dir.register(watcher, ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY);
 		dirWatchers.put(key, dir);
 	}
 
